@@ -20,7 +20,7 @@ public class ConexaoLocal {
         BasicDataSource dataSource = new BasicDataSource();;
         
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3307/projetoIndividual?useTimezone=true&serverTimerzone=UTC");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/projetoIndividual?useTimezone=true&serverTimerzone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("urubu100");
 
