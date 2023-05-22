@@ -19,13 +19,10 @@ public class ConexaoLocal {
     
         BasicDataSource dataSource = new BasicDataSource();;
         
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");;
-        
-        dataSource.setUrl("jdbc:mysql://0.0.0.0:3306/BancoLocalCli?autoReconnect=true&useSSL=false"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
-        
-        dataSource.setUsername("root"); //Usuario do banco
-        
-        dataSource.setPassword("urubu100"); //Senha do banco
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3307/projetoIndividual?useTimezone=true&serverTimerzone=UTC");
+        dataSource.setUsername("root");
+        dataSource.setPassword("urubu100");
 
         this.conexaoLocal = new JdbcTemplate(dataSource);
     }
