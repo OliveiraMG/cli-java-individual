@@ -17,11 +17,11 @@ public class ConexaoLocal {
     
     public ConexaoLocal() {
     
-        BasicDataSource dataSource = new BasicDataSource();
+        BasicDataSource dataSource = new BasicDataSource();;
         
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");;
         
-        dataSource.setUrl("jdbc:mysql://localhost:3306/BancoLocalCli?autoReconnect=true&useSSL=false"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
+        dataSource.setUrl("jdbc:mysql://0.0.0.0:3306/BancoLocalCli?autoReconnect=true&useSSL=false"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
         
         dataSource.setUsername("root"); //Usuario do banco
         
