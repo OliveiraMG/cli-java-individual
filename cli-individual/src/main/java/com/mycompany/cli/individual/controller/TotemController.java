@@ -55,7 +55,7 @@ public class TotemController {
         System.out.println("\nExibindo totens cadastrados");
     }
     };
-    public void exibirComponentesMáquinaAtual() {
+    public void exibirComponentesMaquinaAtual() {
         System.out.println(String.format(
                             "Processador: %s, Arquitetura: %s, Sistema Operacional: %s\n", 
                             looca.getProcessador().getNome(), looca.getSistema().getArquitetura(), looca.getSistema().getSistemaOperacional()

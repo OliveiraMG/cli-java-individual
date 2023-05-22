@@ -35,7 +35,7 @@ public class Aplicacao {
                     totemController.exibirTotensCadastrados();
                     break;
                 case 3: 
-                    totemController.exibirComponentesMáquinaAtual();
+                    totemController.exibirComponentesMaquinaAtual();
                     break;
                 case 0:
                     System.out.println("Até mais1!");
