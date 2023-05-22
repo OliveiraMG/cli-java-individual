@@ -20,9 +20,9 @@ public class ConexaoNuvem {
         
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");;
         
-        dataSource.setUrl("jdbc:sqlserver://airplane-solutions.database.windows.net:1433;\"\n" +
-"                + \"database=bd-airplane-solutions;encrypt=true;trustServerCertificate=false;\"\n" +
-"                + \"hostNameInCertificate=*.database.windows.net;"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
+        dataSource.setUrl("jdbc:sqlserver://airplane-solutions.database.windows.net:1433;" 
+             + "database=bd-airplane-solutions;encrypt=true;trustServerCertificate=false;"
+             + "hostNameInCertificate=*.database.windows.net;"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
         
         dataSource.setUsername("totemInfo@airplane-solutions"); //Usuario do banco
         

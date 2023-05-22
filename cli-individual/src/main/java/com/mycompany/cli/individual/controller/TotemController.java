@@ -43,7 +43,7 @@ public class TotemController {
         System.out.println("\nNovo totem cadastrado com sucesso!");
     };
     public void exibirTotensCadastrados() {
-        List<Map<String, Object>> resultados = jdbcLocal.queryForList("SELECT * FROM Totem;");
+        List<Map<String, Object>> resultados = jdbcNuvem.queryForList("SELECT * FROM Totem;");
     for (Map<String, Object> resultado : resultados) {
         System.out.println("\nidTotem: " + resultado.get("idTotem"));
         System.out.println("\ntoken: " + resultado.get("token"));
