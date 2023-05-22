@@ -38,7 +38,7 @@ public class Aplicacao {
                     totemController.exibirComponentesMaquinaAtual();
                     break;
                 case 0:
-                    System.out.println("Até mais1!");
+                    System.out.println("Até mais!");
             }
         }
         while(resposta != 0);
