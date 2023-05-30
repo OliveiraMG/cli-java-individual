@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author oliveira
  */
 public class Aplicacao {
-        public static void main(Totem totem) {
+        public static void main(String[] args) {
         Scanner leitor01 = new Scanner(System.in);
         TotemController totemController = new TotemController();
         ComponenteController componenteController = new ComponenteController();
@@ -49,16 +49,28 @@ public class Aplicacao {
                     break;
                 case 4:
                     System.out.println("Exibindo dados da CPU");
+                {
+                    Totem totem = null;
                     componenteController.exibirDadosCpu(totem);
+                }
                     break;
+
                 case 5:
                     System.out.println("Exibindo dados da Memória RAM");
+                {
+                    Totem totem = null;
                     componenteController.exibirDadosRam(totem);
+                }
                     break;
+
                 case 6:
                     System.out.println("Exibindo dados do Disco");
+                {
+                    Totem totem = null;
                     componenteController.exibirDadosDisco(totem);
+                }
                     break;
+
                 case 0:
                     System.out.println("Até mais!");
             }
