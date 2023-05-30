@@ -22,6 +22,8 @@ public class Aplicacao {
      
         System.out.println("Olá seja bem vindo ao sistema AIRPLANE SOLUTIONS");
         
+        Totem totem = new Totem();
+        
         Integer resposta = 0;
         do{
             System.out.println("1 - Cadastrar um totem"
@@ -49,26 +51,17 @@ public class Aplicacao {
                     break;
                 case 4:
                     System.out.println("Exibindo dados da CPU");
-                {
-                    Totem totem = null;
                     componenteController.exibirDadosCpu(totem);
-                }
                     break;
 
                 case 5:
                     System.out.println("Exibindo dados da Memória RAM");
-                {
-                    Totem totem = null;
                     componenteController.exibirDadosRam(totem);
-                }
                     break;
 
                 case 6:
                     System.out.println("Exibindo dados do Disco");
-                {
-                    Totem totem = null;
                     componenteController.exibirDadosDisco(totem);
-                }
                     break;
 
                 case 0:
