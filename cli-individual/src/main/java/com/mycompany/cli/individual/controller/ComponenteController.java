@@ -31,26 +31,9 @@ public class ComponenteController {
     }
 
     public void exibirDadosCpu(Totem totem) {
-        Integer fkComponente = 3;
         Integer clock = looca.getProcessador().getNumeroCpusFisicas() + looca.getProcessador().getNumeroCpusLogicas();
         Double clockOnDouble = clock.doubleValue();
-        
-        List<Totem> ultimoTotem = jdbcLocal.query("SELECT TOP 1 idTotem + 1 FROM totem ORDER BY idTotem DESC", new BeanPropertyRowMapper(Componente.class));
-
         Long tempoDeAtividade = looca.getSistema().getTempoDeAtividade();
-
-        jdbcLocal.update("INSERT INTO registroComponente(" +
-                        "fkTotem, fkComponente, valorUso, clock, dataHoraCaptura, " +
-                        "tempoAtividade, dataInicializacao)" +
-                        " VALUES (?,?,?,?,?,?,?)",
-                ultimoTotem.get(0).getIdTotem(),
-                fkComponente,
-                looca.getProcessador().getUso().intValue(),
-                clockOnDouble,
-                new Date(),
-                Conversor.formatarSegundosDecorridos(tempoDeAtividade),
-                Date.from(looca.getSistema().getInicializado())
-        );
         
         System.out.println("---".repeat(20) + "Dados da CPU" + "---".repeat(20) );
         System.out.println(String.format("\nValor de uso: %d "
