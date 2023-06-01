@@ -7,7 +7,7 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class ComponenteDisco {
+public class Componente {
     private Looca looca = new Looca();
 
     public String getNomeDisco() {

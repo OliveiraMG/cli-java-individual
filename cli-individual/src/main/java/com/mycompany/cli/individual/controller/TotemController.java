@@ -40,6 +40,12 @@ public class TotemController {
                             looca.getProcessador().getNome(),
                             token);
         
+//        jdbcNuvem.update("INSERT INTO Totem(arquitetura, sistemaOperacional, processador, token) VALUES (?, ?, ?, ?)",
+//                            looca.getSistema().getArquitetura(), 
+//                            looca.getSistema().getSistemaOperacional(), 
+//                            looca.getProcessador().getNome(),
+//                            token);
+        
         System.out.println("\nNovo totem cadastrado com sucesso!");
     };
     public void exibirTotensCadastrados() {
