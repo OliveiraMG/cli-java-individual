@@ -32,11 +32,12 @@ public class ComponenteController {
         Double clockOnDouble = clock.doubleValue();
         Long tempoDeAtividade = looca.getSistema().getTempoDeAtividade();
         
-        System.out.println("---".repeat(20) + "Dados da CPU" + "---".repeat(20) );
-        System.out.println(String.format("\nValor de uso: %d "
+        System.out.println("---".repeat(10) + "Dados da CPU" + "---".repeat(10) );
+        System.out.println(String.format("Valor de uso: %d "
                 + "\nClock: %f"
                 + "\nTempo de atividade: %s"
-                + "\nData de inicializacao: %s", looca.getProcessador().getUso().intValue(),
+                + "\nData de inicializacao: %s"
+                + "\n\n\n", looca.getProcessador().getUso().intValue(),
                 clockOnDouble,
                 Conversor.formatarSegundosDecorridos(tempoDeAtividade),
                 Date.from(looca.getSistema().getInicializado())));
@@ -45,9 +46,10 @@ public class ComponenteController {
     public void exibirDadosRam() {
         Double usoRam = looca.getMemoria().getEmUso().doubleValue();
 
-        System.out.println("---".repeat(20) + "Dados da RAM" + "---".repeat(20) );
-        System.out.println(String.format("\nValor de uso: %f "
-                + "\nData de captura: %s", usoRam, new Date().toString()));
+        System.out.println("---".repeat(10) + "Dados da RAM" + "---".repeat(10) );
+        System.out.println(String.format("Valor de uso: %f "
+                + "\nData de captura: %s"
+                + "\n\n\n", usoRam, new Date().toString()));
     }
 
     public void exibirDadosDisco() {
@@ -56,9 +58,10 @@ public class ComponenteController {
         Double usoDisco = disco.getUsoDisco();
         Double tempoTransferencia = disco.getTempoTransferencia().doubleValue();
         
-        System.out.println("---".repeat(20) + "Dados da CPU" + "---".repeat(20) );
-        System.out.println(String.format("\nValor de uso: %d "
+        System.out.println("---".repeat(10) + "Dados da CPU" + "---".repeat(10) );
+        System.out.println(String.format("Valor de uso: %f "
                 + "\nTempo de transferência: %f"
-                + "\nData de captura: %s", usoDisco, tempoTransferencia, new Date().toString()));
+                + "\nData de captura: %s"
+                + "\n\n\n", usoDisco, tempoTransferencia, new Date().toString()));
     }
 }
