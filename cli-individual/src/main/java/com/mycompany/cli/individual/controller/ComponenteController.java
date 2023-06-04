@@ -58,7 +58,7 @@ public class ComponenteController {
         Double usoDisco = disco.getUsoDisco();
         Double tempoTransferencia = disco.getTempoTransferencia().doubleValue();
         
-        System.out.println("---".repeat(10) + "Dados da CPU" + "---".repeat(10) );
+        System.out.println("---".repeat(10) + "Dados do Disco" + "---".repeat(10) );
         System.out.println(String.format("Valor de uso: %f "
                 + "\nTempo de transferência: %f"
                 + "\nData de captura: %s"
