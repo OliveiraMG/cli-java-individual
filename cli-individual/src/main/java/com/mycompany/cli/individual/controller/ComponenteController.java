@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 public class ComponenteController {
@@ -22,53 +21,44 @@ public class ComponenteController {
 
     Looca looca = new Looca();
 
-    Scanner leitor02 = new Scanner(System.in);
-
-    public void captureDataAllComponents(Totem totem) {
-        exibirDadosCpu(totem);
-        exibirDadosRam(totem);
-        exibirDadosDisco(totem);
+    public void captureDataAllComponents() {
+        exibirDadosCpu();
+        exibirDadosRam();
+        exibirDadosDisco();
     }
 
-    public void exibirDadosCpu(Totem totem) {
+    public void exibirDadosCpu() {
         Integer clock = looca.getProcessador().getNumeroCpusFisicas() + looca.getProcessador().getNumeroCpusLogicas();
         Double clockOnDouble = clock.doubleValue();
         Long tempoDeAtividade = looca.getSistema().getTempoDeAtividade();
         
         System.out.println("---".repeat(20) + "Dados da CPU" + "---".repeat(20) );
         System.out.println(String.format("\nValor de uso: %d "
-                + "\nClock: %.2f"
+                + "\nClock: %f"
                 + "\nTempo de atividade: %s"
-                + "\nData de inicialização: %s", looca.getProcessador().getUso().intValue(),
+                + "\nData de inicializacao: %s", looca.getProcessador().getUso().intValue(),
                 clockOnDouble,
                 Conversor.formatarSegundosDecorridos(tempoDeAtividade),
                 Date.from(looca.getSistema().getInicializado())));
     }
 
-    public void exibirDadosRam(Totem totem) {
-        Integer fkComponente = 1;
-        Long usoRam = looca.getMemoria().getEmUso();
-        
-        List<Totem> ultimoTotem = jdbcLocal.query("SELECT TOP 1 idTotem + 1 FROM totem ORDER BY idTotem DESC", new BeanPropertyRowMapper(Componente.class));
+    public void exibirDadosRam() {
+        Double usoRam = looca.getMemoria().getEmUso().doubleValue();
 
-        jdbcLocal.update("INSERT INTO registroComponente(" +
-                        "fkTotem, fkComponente, valorUso, dataHoraCaptura)" +
-                        "VALUES (?,?,?,?)",
-                ultimoTotem.get(0).getIdTotem(), fkComponente, usoRam, new Date()
-        );
+        System.out.println("---".repeat(20) + "Dados da RAM" + "---".repeat(20) );
+        System.out.println(String.format("\nValor de uso: %f "
+                + "\nData de captura: %s", usoRam, new Date().toString()));
     }
 
-    public void exibirDadosDisco(Totem totem) {
-        Integer fkComponente = 2;
+    public void exibirDadosDisco() {
         Componente disco = new Componente();
 
         Double usoDisco = disco.getUsoDisco();
-        Long tempoTransferencia = disco.getTempoTransferencia();
-
-        jdbcLocal.update("INSERT INTO registroComponente(" +
-                        "fkTotem, fkComponente, valorUso, tempoTransferencia, dataHoraCaptura) " +
-                        "VALUES (?,?,?,?,?)",
-                totem.getIdTotem(), fkComponente, usoDisco, tempoTransferencia, new Date()
-        );
+        Double tempoTransferencia = disco.getTempoTransferencia().doubleValue();
+        
+        System.out.println("---".repeat(20) + "Dados da CPU" + "---".repeat(20) );
+        System.out.println(String.format("\nValor de uso: %d "
+                + "\nTempo de transferência: %f"
+                + "\nData de captura: %s", usoDisco, tempoTransferencia, new Date().toString()));
     }
 }

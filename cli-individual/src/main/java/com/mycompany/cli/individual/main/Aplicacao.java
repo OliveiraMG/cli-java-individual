@@ -51,17 +51,17 @@ public class Aplicacao {
                     break;
                 case 4:
                     System.out.println("Exibindo dados da CPU");
-                    componenteController.exibirDadosCpu(totem);
+                    componenteController.exibirDadosCpu();
                     break;
 
                 case 5:
                     System.out.println("Exibindo dados da Memória RAM");
-                    componenteController.exibirDadosRam(totem);
+                    componenteController.exibirDadosRam();
                     break;
 
                 case 6:
                     System.out.println("Exibindo dados do Disco");
-                    componenteController.exibirDadosDisco(totem);
+                    componenteController.exibirDadosDisco();
                     break;
 
                 case 0:
