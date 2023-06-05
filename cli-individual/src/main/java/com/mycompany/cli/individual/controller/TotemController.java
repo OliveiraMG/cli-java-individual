@@ -67,18 +67,18 @@ public class TotemController {
         //VALIDANDO O TOKEN DO TOTEM DIGITADO PELO O USUÁRIOS
         String token = "";
         Boolean hasToken = false;
-        // O LAÇO É PARA VALIDAR O TOKEN
-        System.out.println("Digite o token do totem: ");
-        token = leitor02.nextLine();
         
-        /*do{
+        // O LAÇO É PARA VALIDAR O TOKEN
+        do{
+            System.out.println("Digite o token do totem: ");
+            token = leitor02.nextLine();
             
             // VALIDANDO SE ESSE TOKEN JÁ EXISTE, CASO ELE NÃO EXISTA CADASTRA COM ESSE VALOR
             List<Map<String, Object>> listToken = jdbcNuvem.queryForList("SELECT token FROM totem WHERE token = ? AND fkCompanhia = ?", token, idCompanhia);
             if(listToken.isEmpty()) hasToken = true;
         }
         while(!hasToken);
-        */
+        
         
         // PEGANDO AS CAPTURAS DO LOOCA
         String arquitetura = looca.getSistema().getArquitetura() + "bits";
@@ -90,7 +90,7 @@ public class TotemController {
         
         Integer idTotem = Integer.parseInt(mapIdTotem.get("idTotem").toString()) + 1;
         // INSERINDO UM NOVO TOTEM COM AS INFORMAÇÕES ANTERIORES
-        /*
+        
         jdbcNuvem.update("INSERT INTO totem(idTotem, fkCompanhia, token, fabricante, arquitetura, sistemaOperacional, processador, localizacaoTotem) VALUES (?,?,?,?,?,?,?, '')",
                 idTotem,
                 idCompanhia,
@@ -99,7 +99,7 @@ public class TotemController {
                 arquitetura, 
                 sistemaOperacional, 
                 processador);
-        */
+        
         
         List<Totem> listTotem = jdbcNuvem.query("SELECT * FROM totem WHERE token = ? AND fkCompanhia = ?",
                 new BeanPropertyRowMapper(Totem.class), token, idCompanhia);
