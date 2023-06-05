@@ -15,16 +15,15 @@ public class Totem {
     private Integer fkCompanhia;
     private String token;
     private String fabricante;
-    private Integer arquitetura;
+    private String arquitetura;
     private String sistemaOperacional;
     private String processador;
-    private String localizacaoTotem;
     Looca looca = new Looca();
 
     public Totem() {
     }
 
-    public Totem(Integer idTotem, Integer fkCompanhia, String token, String fabricante, Integer arquitetura, String sistemaOperacional, String processador, String localizacaoTotem) {
+    public Totem(Integer idTotem, Integer fkCompanhia, String token, String fabricante, String arquitetura, String sistemaOperacional, String processador, String localizacaoTotem) {
         this.idTotem = idTotem;
         this.fkCompanhia = fkCompanhia;
         this.token = token;
@@ -32,7 +31,6 @@ public class Totem {
         this.arquitetura = arquitetura;
         this.sistemaOperacional = sistemaOperacional;
         this.processador = processador;
-        this.localizacaoTotem = localizacaoTotem;
     }
 
     public Integer getIdTotem() {
@@ -67,11 +65,11 @@ public class Totem {
         this.fabricante = fabricante;
     }
 
-    public Integer getArquitetura() {
+    public String getArquitetura() {
         return arquitetura;
     }
 
-    public void setArquitetura(Integer arquitetura) {
+    public void setArquitetura(String arquitetura) {
         this.arquitetura = arquitetura;
     }
 
@@ -90,15 +88,7 @@ public class Totem {
     public void setProcessador(String processador) {
         this.processador = processador;
     }
-
-    public String getLocalizacaoTotem() {
-        return localizacaoTotem;
-    }
-
-    public void setLocalizacaoTotem(String localizacaoTotem) {
-        this.localizacaoTotem = localizacaoTotem;
-    }
-
+    
     public Looca getLooca() {
         return looca;
     }
@@ -106,13 +96,5 @@ public class Totem {
     public void setLooca(Looca looca) {
         this.looca = looca;
     }
-
-    
-
-    @Override
-    public String toString() {
-        return "DadosTotem{" + "idTotem=" + idTotem + ", fkCompanhia=" + fkCompanhia + ", fabricante=" + fabricante + ", arquitetura=" + arquitetura + ", sistemaOperacional=" + sistemaOperacional + ", processador=" + processador + ", localizacaoTotem=" + localizacaoTotem + ", token=" + token + '}';
-    }
-    
     
 }

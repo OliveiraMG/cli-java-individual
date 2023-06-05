@@ -32,7 +32,6 @@ public class ConexaoNuvem {
     }
     
     public JdbcTemplate getConexaoNuvem() {
-        System.out.println("Acessando o banco de dados!");
         return conexaoNuvem;
     }
 }

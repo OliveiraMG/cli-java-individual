@@ -20,15 +20,14 @@ public class ConexaoLocal {
         BasicDataSource dataSource = new BasicDataSource();;
         
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/projetoIndividual?useTimezone=true&serverTimerzone=UTC");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/bdAirplaneSolutions?autoReconnect=true&useSSL=false");
         dataSource.setUsername("root");
-        dataSource.setPassword("urubu100");
+        dataSource.setPassword("1234");
 
         this.conexaoLocal = new JdbcTemplate(dataSource);
     }
     
     public JdbcTemplate getConexaoLocal() {
-        System.out.println("Acessando o banco de dados!");
         return conexaoLocal;
     }
   

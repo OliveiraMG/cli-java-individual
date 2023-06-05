@@ -39,7 +39,7 @@ public class Aplicacao {
             switch (resposta) {
                 case 1:
                     System.out.println("Cadastrando um totem");
-                    totemController.cadastrarTotem();
+                    totemController.cadastrarTotemNuvem();
                    break;
                 case 2:
                     System.out.println("Exibindo totens cadastrados");
