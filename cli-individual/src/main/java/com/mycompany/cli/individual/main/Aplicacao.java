@@ -27,11 +27,12 @@ public class Aplicacao {
         Integer resposta = 0;
         do{
             System.out.println("1 - Cadastrar um totem"
-                            + "\n2 - Ver totens cadastrados"
-                            + "\n3 - Ver componentes da sua máquina atual"
-                            + "\n4 - Ver dados somente da CPU"
-                            + "\n5 - Ver dados somente da Memória RAM"
-                            + "\n6 - Ver dados somente do Disco"
+                            + "\n2 - Cadastrar um totem na nuvem"
+                            + "\n3 - Ver totens cadastrados"
+                            + "\n4 - Ver componentes da sua máquina atual"
+                            + "\n5 - Ver dados somente da CPU"
+                            + "\n6 - Ver dados somente da Memória RAM"
+                            + "\n7 - Ver dados somente do Disco"
                             + "\n0 - Sair ");
             
             resposta = leitor01.nextInt();
@@ -41,25 +42,33 @@ public class Aplicacao {
                     System.out.println("Cadastrando um totem");
                     totemController.cadastrarTotem();
                    break;
+                   
                 case 2:
+                    System.out.println("Cadastrando um totem na nuvem");
+                    totemController.cadastrarTotemNuvem();
+                   break;
+                   
+                case 3:
                     System.out.println("Exibindo totens cadastrados");
                     totemController.exibirTotensCadastrados();
                     break;
-                case 3:
+                    
+                case 4:
                     System.out.println("Exibindo componentes da sua máquina atual");
                     totemController.exibirComponentesMaquinaAtual();
                     break;
-                case 4:
+                    
+                case 5:
                     System.out.println("Exibindo dados da CPU");
                     componenteController.exibirDadosCpu();
                     break;
 
-                case 5:
+                case 6:
                     System.out.println("Exibindo dados da Memória RAM");
                     componenteController.exibirDadosRam();
                     break;
 
-                case 6:
+                case 7:
                     System.out.println("Exibindo dados do Disco");
                     componenteController.exibirDadosDisco();
                     break;
