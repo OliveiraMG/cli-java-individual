@@ -20,7 +20,7 @@ public class ConexaoLocal {
         BasicDataSource dataSource = new BasicDataSource();;
         
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/bdAirplaneSolutions?autoReconnect=true&useSSL=false");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/projetoIndividual?autoReconnect=true&useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("1234");
 
